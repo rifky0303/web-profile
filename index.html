@@ -1,11 +1,373 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>web profile</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Web Profile</title>
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+  <style>
+    @keyframes scale-up-down {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+      100% { transform: scale(1); }
+    }
+
+    .scale-effect {
+      animation: scale-up-down 0.4s ease-in-out;
+    }
+
+    #profile-box:active {
+      box-shadow: 0 0 15px 5px rgba(255, 255, 255, 0.8);
+      transition: box-shadow 0.2s ease;
+    }
+
+    .click-shadow:active {
+      box-shadow:
+        0 4px 6px rgba(0,0,0,0.3),
+        0 0 15px 3px rgba(255, 255, 255, 0.4);
+      transition: box-shadow 0.2s ease;
+    }
+
+    .wishlist-image:active {
+      transform: scale(0.97);
+      box-shadow: 0 0 15px rgba(255, 255, 255, 0.7), 0 4px 10px rgba(0, 0, 0, 0.4);
+      transition: all 0.2s ease;
+    }
+
+    /* Animasi Scroll Fade In */
+    .fade-in-up {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: all 0.6s ease-out;
+    }
+
+    .fade-in-up.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
 </head>
-<body>
-    
+<body class="bg-[url(https://images.pexels.com/photos/29252131/pexels-photo-29252131/free-photo-of-dynamic-red-racing-car-in-action-on-track.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500?w=1200)] bg-cover bg-no-repeat relative bg-red-700 text-white">
+
+<!-- Navbar -->
+<nav class="flex justify-between h-[50px] bg-red-700 items-center">
+  <div class="flex capitalize pl-10 font-[baskerville]">
+    <h1 class="text-3xl">leonardweb</h1>
+  </div>
+  <ul class="flex gap-20 cursor-pointer font-[gilda] text-2xl pr-10">
+    <li class="hover:text-yellow-600 transition"><a href="#home" class="nav-link">Home</a></li>
+    <li class="hover:text-yellow-600 transition"><a href="#about" class="nav-link">About me</a></li>
+    <li class="hover:text-yellow-600 transition"><a href="#achievement" class="nav-link">Achievement</a></li>
+  </ul>
+</nav>
+
+<!-- Foto Profil -->
+<div class="flex justify-center mt-10">
+  <div id="profile-box" class="bg-blue-200 w-[300px] aspect-square border-4 border-white rounded-full overflow-hidden cursor-pointer">
+    <img class="bg-transparent w-full h-full object-cover rounded-full" src="https://www.ligaolahraga.com/storage/images/news/2025/05/22/charles-leclerc-tak-tahu-apa-yang-terjadi-dengan-ferrari.jpg" alt="Profile Image" />
+  </div>
+</div>
+
+<!-- Nama -->
+<div class="flex flex-col items-center mt-5">
+  <h1 class="font-[serif] text-2xl">Rifky Candra Muzaki</h1>
+  <h1 class="font-[serif] text-2xl">XI PPLG 3</h1>
+</div>
+
+<!-- Section About -->
+<section id="about" class="min-h-screen flex flex-col justify-center px-10 mt-10">
+  <div class="flex flex-col md:flex-row justify-between gap-10">
+    <!-- Biodata -->
+    <div class="md:w-1/2 bg-white/10 p-6 rounded-lg transition-all duration-300 hover:shadow-lg active:scale-[0.98] active:bg-white/20 cursor-pointer backdrop-blur-sm click-shadow">
+      <h1 class="font-[serif] text-5xl">Biodata</h1>
+      <h1 class="font-[serif] text-2xl mt-2">Hello, Everyone!</h1>
+      <p class="text-lg mt-2 fade-in-up">
+        Saya Rifky Candra Muzaki, lahir pada tanggal 3 Maret 2009 di Kota Bandung. Sekarang saya tinggal di Kab. Bandung, Kecamatan Cangkuang, Kp. Nanggerang RT1 RW2.
+      </p>
+    </div>
+    <!-- Gambar pendukung -->
+    <div class="w-full md:w-[400px] h-auto">
+      <img class="mt-10 md:mt-0 rounded-lg" src="https://img.freepik.com/premium-vector/formula-1-car-speeds-racing-illustration_1310786-50513.jpg?semt=ais_hybrid&w=740&q=80" alt="Formula Image" />
+    </div>
+  </div>
+</section>
+
+<!-- Section Achievement -->
+<section id="achievement" class="min-h-screen flex flex-col justify-center px-10 mt-10">
+  <div class="flex flex-col md:flex-row-reverse justify-between gap-10">
+    <!-- Teks Achievement -->
+    <div class="md:w-1/2 bg-white/10 p-6 rounded-lg transition-all duration-300 hover:shadow-lg active:scale-[0.98] active:bg-white/20 cursor-pointer backdrop-blur-sm click-shadow">
+      <h1 class="font-serif text-4xl md:text-5xl font-bold mb-4">My Achievement</h1>
+      <p class="text-lg fade-in-up">
+        Saya pernah meraih beberapa penghargaan di beberapa hobi saya, termasuk basket dan maraton. Basket: saya pernah meraih juara 2 bersama klub saya. Maraton: saya pernah juara 1 antar RT saat 17-an.
+      </p>
+    </div>
+    <!-- Gambar Achievement -->
+    <div class="w-full md:w-[800px] h-auto">
+      <img class="mt-10 md:mt-0 rounded-lg" src="https://awsimages.detik.net.id/community/media/visual/2021/03/12/ferrari-sf-90-stradale.jpeg?w=1200" alt="Achievement Image" />
+    </div>
+  </div>
+</section>
+
+<!-- Section Wishlist -->
+<section id="wishlist" class="px-10 mt-10">
+  <h1 class="text-4xl md:text-5xl font-bold font-serif mb-6">Wishlist</h1>
+  <div class="flex flex-col md:flex-row gap-6 justify-center items-center">
+    <!-- Gambar 1 -->
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcShDUC2p9uRIwuRIloMiVyLICakx3zLfa6QOC-ld616hS0tVWpqN5CV1jcb&s=10?w=740" alt="Wishlist 1" class="wishlist-image w-full md:w-[30%] rounded-lg object-cover cursor-pointer" />
+    <!-- Gambar 2 -->
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8b/Ferrari_F8_Tributo_Genf_2019_1Y7A5665.jpg/960px-Ferrari_F8_Tributo_Genf_2019_1Y7A5665.jpg?w=740" alt="Wishlist 2" class="wishlist-image w-full md:w-[30%] rounded-lg object-cover cursor-pointer" />
+    <!-- Gambar 3 -->
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRkk0fhA8Ok4S2L07rEfACaYHke7eDGD-YnfdNjDrlXL-WQ7b-l86DqpLpS&s=10?w=740" alt="Wishlist 3" class="wishlist-image w-full md:w-[30%] rounded-lg object-cover cursor-pointer" />
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-black/60 text-white py-6 mt-10">
+  <div class="flex flex-col md:flex-row justify-center items-center gap-10">
+    <a href="https://www.instagram.com/leonardrapiki?igsh=dHEycDlvM3o3b2F1" target="_blank" class="flex items-center gap-2 hover:text-pink-500 transition">
+      <i class="fab fa-instagram text-2xl"></i>
+      <span>@leonardrapiki</span>
+    </a>
+    <a href="https://www.tiktok.com/@leon4rq?_t=ZS-8ycrBwqFTNw&_r=1" target="_blank" class="flex items-center gap-2 hover:text-white transition">
+      <i class="fab fa-tiktok text-2xl"></i>
+      <span>@di'k leonard</span>
+    </a>
+    <a href="https://wa.me/6282231235341" target="_blank" class="flex items-center gap-2 hover:text-green-400 transition">
+      <i class="fab fa-whatsapp text-2xl"></i>
+      <span>+62 822-3123-5341</span>
+    </a>
+    <a href="https://twitter.com/akunmu" target="_blank" class="flex items-center gap-2 hover:text-blue-400 transition">
+      <i class="fab fa-twitter text-2xl"></i>
+      <span>@</span>
+    </a>
+  </div>
+</footer>
+
+<!-- Script Efek -->
+<script>
+  // Efek scale pada profile box
+  const profileBox = document.getElementById("profile-box");
+  profileBox.addEventListener("click", () => {
+    profileBox.classList.add("scale-effect");
+    setTimeout(() => {
+      profileBox.classList.remove("scale-effect");
+    }, 400);
+  });
+
+  // Efek scale pada gambar wishlist
+  const wishlistImages = document.querySelectorAll(".wishlist-image");
+  wishlistImages.forEach(img => {
+    img.addEventListener("click", () => {
+      img.classList.add("scale-effect");
+      setTimeout(() => {
+        img.classList.remove("scale-effect");
+      }, 400);
+    });
+  });
+
+  // Animasi scroll untuk paragraf
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('show');
+      }
+    });
+  }, {
+    threshold: 0.2
+  });
+
+  const hiddenElements = document.querySelectorAll('.fade-in-up');
+  hiddenElements.forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html><!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Web Profile</title>
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+  <style>
+    @keyframes scale-up-down {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+      100% { transform: scale(1); }
+    }
+
+    .scale-effect {
+      animation: scale-up-down 0.4s ease-in-out;
+    }
+
+    #profile-box:active {
+      box-shadow: 0 0 15px 5px rgba(255, 255, 255, 0.8);
+      transition: box-shadow 0.2s ease;
+    }
+
+    .click-shadow:active {
+      box-shadow:
+        0 4px 6px rgba(0,0,0,0.3),
+        0 0 15px 3px rgba(255, 255, 255, 0.4);
+      transition: box-shadow 0.2s ease;
+    }
+
+    .wishlist-image:active {
+      transform: scale(0.97);
+      box-shadow: 0 0 15px rgba(255, 255, 255, 0.7), 0 4px 10px rgba(0, 0, 0, 0.4);
+      transition: all 0.2s ease;
+    }
+
+    /* Animasi Scroll Fade In */
+    .fade-in-up {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: all 0.6s ease-out;
+    }
+
+    .fade-in-up.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body class="bg-[url(https://images.pexels.com/photos/29252131/pexels-photo-29252131/free-photo-of-dynamic-red-racing-car-in-action-on-track.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500?w=1200)] bg-cover bg-no-repeat relative bg-red-700 text-white">
+
+<!-- Navbar -->
+<nav class="flex justify-between h-[50px] bg-red-700 items-center">
+  <div class="flex capitalize pl-10 font-[baskerville]">
+    <h1 class="text-3xl">leonardweb</h1>
+  </div>
+  <ul class="flex gap-20 cursor-pointer font-[gilda] text-2xl pr-10">
+    <li class="hover:text-yellow-600 transition"><a href="#home" class="nav-link">Home</a></li>
+    <li class="hover:text-yellow-600 transition"><a href="#about" class="nav-link">About me</a></li>
+    <li class="hover:text-yellow-600 transition"><a href="#achievement" class="nav-link">Achievement</a></li>
+  </ul>
+</nav>
+
+<!-- Foto Profil -->
+<div class="flex justify-center mt-10">
+  <div id="profile-box" class="bg-blue-200 w-[300px] aspect-square border-4 border-white rounded-full overflow-hidden cursor-pointer">
+    <img class="bg-transparent w-full h-full object-cover rounded-full" src="https://www.ligaolahraga.com/storage/images/news/2025/05/22/charles-leclerc-tak-tahu-apa-yang-terjadi-dengan-ferrari.jpg" alt="Profile Image" />
+  </div>
+</div>
+
+<!-- Nama -->
+<div class="flex flex-col items-center mt-5">
+  <h1 class="font-[serif] text-2xl">Rifky Candra Muzaki</h1>
+  <h1 class="font-[serif] text-2xl">XI PPLG 3</h1>
+</div>
+
+<!-- Section About -->
+<section id="about" class="min-h-screen flex flex-col justify-center px-10 mt-10">
+  <div class="flex flex-col md:flex-row justify-between gap-10">
+    <!-- Biodata -->
+    <div class="md:w-1/2 bg-white/10 p-6 rounded-lg transition-all duration-300 hover:shadow-lg active:scale-[0.98] active:bg-white/20 cursor-pointer backdrop-blur-sm click-shadow">
+      <h1 class="font-[serif] text-5xl">Biodata</h1>
+      <h1 class="font-[serif] text-2xl mt-2">Hello, Everyone!</h1>
+      <p class="text-lg mt-2 fade-in-up">
+        Saya Rifky Candra Muzaki, lahir pada tanggal 3 Maret 2009 di Kota Bandung. Sekarang saya tinggal di Kab. Bandung, Kecamatan Cangkuang, Kp. Nanggerang RT1 RW2.
+      </p>
+    </div>
+    <!-- Gambar pendukung -->
+    <div class="w-full md:w-[400px] h-auto">
+      <img class="mt-10 md:mt-0 rounded-lg" src="https://img.freepik.com/premium-vector/formula-1-car-speeds-racing-illustration_1310786-50513.jpg?semt=ais_hybrid&w=740&q=80" alt="Formula Image" />
+    </div>
+  </div>
+</section>
+
+<!-- Section Achievement -->
+<section id="achievement" class="min-h-screen flex flex-col justify-center px-10 mt-10">
+  <div class="flex flex-col md:flex-row-reverse justify-between gap-10">
+    <!-- Teks Achievement -->
+    <div class="md:w-1/2 bg-white/10 p-6 rounded-lg transition-all duration-300 hover:shadow-lg active:scale-[0.98] active:bg-white/20 cursor-pointer backdrop-blur-sm click-shadow">
+      <h1 class="font-serif text-4xl md:text-5xl font-bold mb-4">My Achievement</h1>
+      <p class="text-lg fade-in-up">
+        Saya pernah meraih beberapa penghargaan di beberapa hobi saya, termasuk basket dan maraton. Basket: saya pernah meraih juara 2 bersama klub saya. Maraton: saya pernah juara 1 antar RT saat 17-an.
+      </p>
+    </div>
+    <!-- Gambar Achievement -->
+    <div class="w-full md:w-[800px] h-auto">
+      <img class="mt-10 md:mt-0 rounded-lg" src="https://awsimages.detik.net.id/community/media/visual/2021/03/12/ferrari-sf-90-stradale.jpeg?w=1200" alt="Achievement Image" />
+    </div>
+  </div>
+</section>
+
+<!-- Section Wishlist -->
+<section id="wishlist" class="px-10 mt-10">
+  <h1 class="text-4xl md:text-5xl font-bold font-serif mb-6">Wishlist</h1>
+  <div class="flex flex-col md:flex-row gap-6 justify-center items-center">
+    <!-- Gambar 1 -->
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcShDUC2p9uRIwuRIloMiVyLICakx3zLfa6QOC-ld616hS0tVWpqN5CV1jcb&s=10?w=740" alt="Wishlist 1" class="wishlist-image w-full md:w-[30%] rounded-lg object-cover cursor-pointer" />
+    <!-- Gambar 2 -->
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8b/Ferrari_F8_Tributo_Genf_2019_1Y7A5665.jpg/960px-Ferrari_F8_Tributo_Genf_2019_1Y7A5665.jpg?w=740" alt="Wishlist 2" class="wishlist-image w-full md:w-[30%] rounded-lg object-cover cursor-pointer" />
+    <!-- Gambar 3 -->
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRkk0fhA8Ok4S2L07rEfACaYHke7eDGD-YnfdNjDrlXL-WQ7b-l86DqpLpS&s=10?w=740" alt="Wishlist 3" class="wishlist-image w-full md:w-[30%] rounded-lg object-cover cursor-pointer" />
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-black/60 text-white py-6 mt-10">
+  <div class="flex flex-col md:flex-row justify-center items-center gap-10">
+    <a href="https://www.instagram.com/leonardrapiki?igsh=dHEycDlvM3o3b2F1" target="_blank" class="flex items-center gap-2 hover:text-pink-500 transition">
+      <i class="fab fa-instagram text-2xl"></i>
+      <span>@leonardrapiki</span>
+    </a>
+    <a href="https://www.tiktok.com/@leon4rq?_t=ZS-8ycrBwqFTNw&_r=1" target="_blank" class="flex items-center gap-2 hover:text-white transition">
+      <i class="fab fa-tiktok text-2xl"></i>
+      <span>@di'k leonard</span>
+    </a>
+    <a href="https://wa.me/6282231235341" target="_blank" class="flex items-center gap-2 hover:text-green-400 transition">
+      <i class="fab fa-whatsapp text-2xl"></i>
+      <span>+62 822-3123-5341</span>
+    </a>
+    <a href="https://twitter.com/akunmu" target="_blank" class="flex items-center gap-2 hover:text-blue-400 transition">
+      <i class="fab fa-twitter text-2xl"></i>
+      <span>@</span>
+    </a>
+  </div>
+</footer>
+
+<!-- Script Efek -->
+<script>
+  // Efek scale pada profile box
+  const profileBox = document.getElementById("profile-box");
+  profileBox.addEventListener("click", () => {
+    profileBox.classList.add("scale-effect");
+    setTimeout(() => {
+      profileBox.classList.remove("scale-effect");
+    }, 400);
+  });
+
+  // Efek scale pada gambar wishlist
+  const wishlistImages = document.querySelectorAll(".wishlist-image");
+  wishlistImages.forEach(img => {
+    img.addEventListener("click", () => {
+      img.classList.add("scale-effect");
+      setTimeout(() => {
+        img.classList.remove("scale-effect");
+      }, 400);
+    });
+  });
+
+  // Animasi scroll untuk paragraf
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('show');
+      }
+    });
+  }, {
+    threshold: 0.2
+  });
+
+  const hiddenElements = document.querySelectorAll('.fade-in-up');
+  hiddenElements.forEach(el => observer.observe(el));
+</script>
+
 </body>
 </html>
